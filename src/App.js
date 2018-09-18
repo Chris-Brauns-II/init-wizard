@@ -44,6 +44,3 @@ class App extends Component {
 }
 
 export default App;
-
-store.dispatch(addStream('stream1'));
-store.dispatch(addStream('stream2'));
