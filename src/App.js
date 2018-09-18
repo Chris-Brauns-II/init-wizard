@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import store from "./Redux/store";
-import { addStream } from "./Redux/Actions/modelActions";
 
 import Button from '@material-ui/core/Button';
 

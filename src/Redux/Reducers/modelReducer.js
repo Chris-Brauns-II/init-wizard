@@ -1,4 +1,4 @@
-import {addStream, ADD_STREAM} from "../Actions/modelActions";
+import {ADD_STREAM} from "../Actions/modelActions";
 
 const initialState = {
     streams: [],
@@ -18,8 +18,9 @@ function streamApp(state = initialState, action) {
                     }
                 ]
             };
+        default:
+            return state;
     }
-    return state;
 }
 
 export default streamApp;
