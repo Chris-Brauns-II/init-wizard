@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+
+import store from "./Redux/store";
+import { addStream } from "./Redux/Actions/modelActions";
+
+import Button from '@material-ui/core/Button';
+
 import './App.css';
 
 class App extends Component {
@@ -15,21 +21,18 @@ class App extends Component {
           <tbody>
             <tr>
               <td>
-                <div>
-                  <h2>Stream Manager</h2>
-                  <button>Add a Stream</button>
+                <div className="add-element">
+                  <Button variant="outlined" color="primary">Add a Stream</Button>
                 </div>
               </td>
               <td>
-                <div>
-                  <h2>Producer Manager</h2>
-                  <button>Add a Stream</button>
+                <div className="add-element">
+                  <Button variant="outlined" color="primary">Add a Stream</Button>
                 </div>
               </td>
               <td>
-                <div>
-                  <h2>Consumer Manager</h2>
-                  <button>Add a Stream</button>
+                <div className="add-element">
+                  <Button variant="outlined" color="primary">Add a Stream</Button>
                 </div>
               </td>
             </tr>
@@ -41,3 +44,6 @@ class App extends Component {
 }
 
 export default App;
+
+store.dispatch(addStream('stream1'));
+store.dispatch(addStream('stream2'));
