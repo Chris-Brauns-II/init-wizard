@@ -12,30 +12,27 @@ function streamApp(state = initialState, action) {
             return {
                 ...state,
                 streams: [
-                    ...state.producers,
-                    {
+                    ...state.streams.concat({
                         name: action.name
-                    }
+                    })
                 ]
             };
         case ADD_PRODUCER:
             return {
                 ...state,
                 producers: [
-                    ...state.producers,
-                    {
+                    ...state.producers.concat({
                         name: action.name
-                    }
+                    })
                 ]
             };
         case ADD_CONSUMER:
             return {
                 ...state,
                 consumers: [
-                    ...state.consumers,
-                    {
+                    ...state.consumers.concat({
                         name: action.name
-                    }
+                    })
                 ]
             }
         default:

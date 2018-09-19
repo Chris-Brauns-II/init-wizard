@@ -4,7 +4,9 @@ import { connect } from 'react-redux'
 
 import Button from "@material-ui/core/Button"
 
-const StructureBuilder = ({ dispatch }) => {
+import ArchitectureVisualization from "./ArchitectureVisualization/ArchitectureVisualization"
+
+const StructureBuilder = ({ dispatch, streams, producers, consumers }) => {
   return (
     <div>
       <table>
@@ -28,8 +30,21 @@ const StructureBuilder = ({ dispatch }) => {
           </tr>
         </tbody>
       </table>
+      <ArchitectureVisualization 
+        streams={streams}
+        producers={producers}
+        consumers={consumers}
+      />
     </div>
   );
 }
 
-export default connect()(StructureBuilder);
+const mapStateToProps = (state) => {
+  return {
+    streams: state.streams,
+    producers: state.producers,
+    consumers: state.consumers
+  }
+}
+
+export default connect(mapStateToProps)(StructureBuilder);
