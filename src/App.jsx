@@ -2,6 +2,7 @@ import React from 'react';
 import StructureBuilder from './StructureBuilder/StructureBuilder';
 
 import './App.css';
+import { Button } from '@material-ui/core';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         To get started, specify the number of topics, producers, and consumers.
       </p>
       <StructureBuilder/>
+      <Button variant="outlined" color="primary">Generate</Button>
     </div>
   )
 };
